@@ -407,7 +407,7 @@ bindEvents: function() {
 										console.log(error);
 									      }
 
-		App.contracts.Land.createProperty(PropId, PropVal, 0x89194B8Be5AA15Bf6fF21458Dd8Eb07717DD8Ae2, {gas: 1000000, gasPrice: web3.toWei(20, 'gwei')}, function(error, result){
+		App.contracts.Land.createProperty(PropId, PropVal, PropOwner, {gas: 1000000, gasPrice: web3.toWei(20, 'gwei')}, function(error, result){
         if(!error)
             console.log(JSON.stringify(result));
         else

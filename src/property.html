@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Asset Registry</title>
+    <title>Property</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,15 +17,15 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-<body>
+<body style="background-color: black;">
   <div class="container-fluid">
     <header>
       <div class="row">
         <div class="col-md-6">
-          <img src="https://servntire.com/wp-content/uploads/2018/01/logo@2x.png" width="100" alt="Logo" title="Logo" />
+          <!--<img src="https://servntire.com/wp-content/uploads/2018/01/logo@2x.png" width="100" alt="Logo" title="Logo" /> -->
         </div>
         <div class="col-md-6 text-right">
-          <ul>
+          <ul style="list-style-type:none;">
             <li><a href="index.html">Create Property</a></li>
             <li><a href="property.html">View Property</a></li>
             <li><a href="user.html">Add User</a></li>
@@ -34,23 +34,46 @@
       </div>
     </header>
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-6 offset-md-3  ">
         <div class="col-md-6 offset-md-0">
         <form action="#" id = "PropSearchform">
           <div class="form-group">
-            <label>Get Property Details</label>
+            <label style="font: 24px ; color: aqua;" >Get Property Details</label>
             <input type="text" class="form-control" id="PropSearch" name="PropSearch" placeholder="Enter Property Id">
 
 
           </div>
 
         </form>
-        <button type="submit"  class="btn btn-primary" id="btn-PropSearch"  form="form1" value="Submit">Search Property</button>
+        <button onclick="show()" type="submit"  class="btn btn-primary" id="btn-PropSearch"  form="form1" value="Submit">Search Property</button>
+       
+
+         
+       <!-- var Prop_Search =  document.getElementById("PropSearch"); -->
+          <script>
+          function show() {
+            var text1 = document.getElementById("PropSearch");
+            if(text1.value == "10"){
+            document.getElementById("no").innerHTML = "1";
+            document.getElementById("resultPropID").innerHTML = "10";
+            document.getElementById("resultPropStatus").innerHTML = "occupied";
+            document.getElementById("resultPropValue").innerHTML = "100,000";
+            document.getElementById("resultPropOwner").innerHTML = "Moaaz";
+            }
+            else{
+              document.getElementById("no").innerHTML = "#";
+            document.getElementById("resultPropID").innerHTML = "--";
+            document.getElementById("resultPropStatus").innerHTML = "--";
+            document.getElementById("resultPropValue").innerHTML = "--";
+            document.getElementById("resultPropOwner").innerHTML = "--";
+            }
+            }
+          </script>
 
       </div>
         <table class="table table-striped">
           <thead>
-            <tr>
+            <tr style="font: 24px ; color: aqua;" >
               <th scope="col">#</th>
               <th scope="col">Property ID</th>
               <th scope="col">Status</th>
@@ -59,10 +82,11 @@
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
+           
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
+              <th scope="row" id="no"></th>
               <td id="resultPropID"></td>
               <td id="resultPropStatus"></td>
               <td id="resultPropValue"></td>
